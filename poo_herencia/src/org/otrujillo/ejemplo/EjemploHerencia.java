@@ -6,6 +6,8 @@ import org.otrujillo.pooherencia.Profesor;
 
 public class EjemploHerencia {
     public static void main(String[] args) {
+
+        System.out.println("================= Creando la instancia de la clase Alumno =================");
         Alumno alumno = new Alumno();
         alumno.setNombre("Oscar");
         alumno.setApellido("Trujillo");
@@ -15,6 +17,7 @@ public class EjemploHerencia {
         alumno.setNotaHistoria(6.4);
         alumno.setNotaMatematica(4.0);
 
+        System.out.println("================= Creando la instancia de la clase AlumnoInternacional =================");
         AlumnoInternacional alumnoInternacional = new AlumnoInternacional();
         alumnoInternacional.setNombre("Ryan");
         alumnoInternacional.setApellido("Gosling");
@@ -26,6 +29,7 @@ public class EjemploHerencia {
         alumnoInternacional.setNotaHistoria(5.8);
         alumnoInternacional.setNotaMatematica(6.5);
 
+        System.out.println("================= Creando la instancia de la clase Profesor =================");
         Profesor profesor = new Profesor();
         profesor.setNombre("Kirk");
         profesor.setApellido("Carrillo");

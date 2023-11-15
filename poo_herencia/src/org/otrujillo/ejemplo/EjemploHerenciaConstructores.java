@@ -54,6 +54,9 @@ public class EjemploHerenciaConstructores {
                 System.out.println("Nota idioma: " + ((AlumnoInternacional) persona).getNotaIdiomas());
                 System.out.println("Pais: " + ((AlumnoInternacional) persona).getPais());
             }
+            System.out.println("================================ Sobrescritura promedio =====================================");
+            System.out.println("Promedio: " + ((Alumno) persona).calcularPromedio());
+            System.out.println("============================================================================================");
         }
 
         if(persona instanceof Profesor){
@@ -61,6 +64,8 @@ public class EjemploHerenciaConstructores {
             System.out.println("Asignatura: " + ((Profesor) persona).getAsignatura());
         }
 
+        System.out.println("================================ Sobrescritura saludar =====================================");
+        System.out.println(persona.saludar());
         System.out.println("============================================================================================");
     }
 }

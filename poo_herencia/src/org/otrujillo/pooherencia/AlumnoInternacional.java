@@ -8,6 +8,15 @@ public class AlumnoInternacional extends Alumno{
         System.out.println("AlumnoInternacional: Inicializando constructor...");
     }
 
+    public AlumnoInternacional(String nombre, String apellido){
+        super(nombre, apellido); //Le pasa al constructor del padre, en este caso, Alumno es el padre
+    }
+
+    public AlumnoInternacional(String nombre, String apellido, String pais){
+        super(nombre, apellido);
+        this.pais = pais;
+    }
+
     public String getPais() {
         return pais;
     }

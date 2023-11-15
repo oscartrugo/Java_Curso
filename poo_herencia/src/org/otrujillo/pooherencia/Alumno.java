@@ -10,6 +10,27 @@ public class Alumno extends Persona{
         System.out.println("Alumno: Inicializando constructor...");
     }
 
+    public Alumno(String nombre, String apellido){
+        super(nombre, apellido); //Hacemos referencia al constructor del padre
+    }
+
+    public Alumno(String nombre, String apellido, int edad){
+        super(nombre, apellido, edad); //Invocamos al constructor del padre que pase estos 3 parámetros
+    }
+
+    public Alumno(String nombre, String apellido, int edad, String institucion){
+        super(nombre, apellido, edad); //Le pasamos los parámetros al padre, también podríamos utilizar this(nombre, apellido, edad)
+        this.institucion = institucion; //Atributo propio de Alumno
+    }
+
+    public Alumno(String nombre, String apellido, int edad, String institucion,
+                  double notaMatematica, double notaLenguaje, double notaHistoria){ //Sobrecarga grande de constructor
+        this(nombre, apellido, edad, institucion);
+        this.notaMatematica = notaMatematica;
+        this.notaLenguaje = notaLenguaje;
+        this.notaHistoria = notaHistoria;
+    }
+
     public String getInstitucion() {
         return institucion;
     }

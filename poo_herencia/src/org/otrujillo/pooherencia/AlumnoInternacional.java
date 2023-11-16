@@ -1,6 +1,6 @@
 package org.otrujillo.pooherencia;
 
-public class AlumnoInternacional extends Alumno{
+public final class AlumnoInternacional extends Alumno{
     private String pais;
     private double notaIdiomas;
 

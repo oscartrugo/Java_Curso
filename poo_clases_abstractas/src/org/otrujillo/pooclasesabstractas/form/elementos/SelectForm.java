@@ -26,7 +26,7 @@ public class SelectForm extends ElementoForm {
 
     @Override
     public String dibujarHtml() {
-        StringBuilder sb = new StringBuilder("<select> ");
+        StringBuilder sb = new StringBuilder("<select>");
         sb.append("name='")
                 .append(this.nombre)
                 .append("'>");
@@ -43,7 +43,7 @@ public class SelectForm extends ElementoForm {
                     .append(opcion.getNombre())
                     .append("</option>");
         }
-        sb.append("</select>");
+        sb.append("\n</select>");
         return sb.toString();
     }
 }

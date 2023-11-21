@@ -4,6 +4,10 @@ public class InputForm extends ElementoForm{
 
     private String tipo = "text";
 
+    public InputForm(String username) {
+
+    }
+
     public String getTipo() {
         return tipo;
     }

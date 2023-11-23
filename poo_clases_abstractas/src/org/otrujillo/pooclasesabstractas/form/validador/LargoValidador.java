@@ -1,6 +1,8 @@
 package org.otrujillo.pooclasesabstractas.form.validador;
 
-public class LargoValidador extends Validador{
+import org.otrujillo.pooclasesabstractas.form.validador.mensaje.MensajeFormateable;
+
+public class LargoValidador extends Validador implements MensajeFormateable {
 
     protected String mensaje = "El campo %s debe tener mínimo %d caracteres y máximo %d caracteres.";
     private int minimo = 0;
@@ -42,7 +44,8 @@ public class LargoValidador extends Validador{
         return largo >= this.minimo && largo <= this.maximo;
     }
 
-    public String getMensajeFormateado(String campo){
+    @Override
+    public String getMensajeFormateado(String campo) {
         return String.format(this.mensaje, campo, this.minimo, this.maximo);
     }
 }

@@ -1,6 +1,6 @@
 package org.otrujillo.pooclasesabstractas.form.validador;
 
-public class NoNulo extends Validador{
+public class NoNuloValidador extends Validador{
 
     protected String mensaje = "El campo no puede ser nulo";
 

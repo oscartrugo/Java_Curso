@@ -45,5 +45,9 @@ abstract public class ElementoForm {
         return this.errores.isEmpty();
     }
 
+    public String getNombre() {
+        return nombre;
+    }
+
     abstract public String dibujarHtml();
 }

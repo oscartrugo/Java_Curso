@@ -4,19 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Curriculo extends Hoja implements Imprimible {
-    private String persona;
+    private Persona persona;
     private String carrera;
     private List<String> experiencias;
 
-    public Curriculo(String contenido, String persona, String carrera) {
+    public Curriculo(String contenido, Persona persona, String carrera) {
         super(contenido);
         this.persona = persona;
         this.carrera = carrera;
         this.experiencias = new ArrayList<>();
     }
 
-    public void addExperiencia(String experiencia){
+    public Curriculo addExperiencia(String experiencia) {
         experiencias.add(experiencia);
+        return this;
     }
 
     @Override

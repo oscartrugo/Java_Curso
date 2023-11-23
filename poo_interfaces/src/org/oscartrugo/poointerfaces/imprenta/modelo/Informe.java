@@ -1,10 +1,10 @@
 package org.oscartrugo.poointerfaces.imprenta.modelo;
 
 public class Informe extends Hoja implements Imprimible{
-    private String autor;
-    private String revisor;
+    private Persona autor;
+    private Persona revisor;
 
-    public Informe(String contenido, String autor, String revisor) {
+    public Informe(String contenido, Persona autor, Persona revisor) {
         super(contenido);
         this.autor = autor;
         this.revisor = revisor;

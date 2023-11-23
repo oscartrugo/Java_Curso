@@ -2,6 +2,8 @@ package org.oscartrugo.poointerfaces.imprenta;
 
 import org.oscartrugo.poointerfaces.imprenta.modelo.*;
 import static org.oscartrugo.poointerfaces.imprenta.modelo.Genero.PROGRAMACION;
+import static org.oscartrugo.poointerfaces.imprenta.modelo.Imprimible.*;
+
 
 public class EjemploImprenta {
     public static void main(String[] args) {
@@ -24,9 +26,15 @@ public class EjemploImprenta {
         imprimir(cv);
         imprimir(informe);
         imprimir(libro);
-    }
 
-    public static void imprimir(Imprimible imprimible){
-        System.out.println(imprimible.imprimir());
+        Imprimible objImp = new Imprimible(){
+            @Override
+            public String imprimir() {
+                return "Hola que tal, imprimiendo un objeto genérico de una clase anónima!";
+            }
+        };
+        imprimir(objImp);
+
+        System.out.println(TEXTO_DEFECTO);
     }
 }

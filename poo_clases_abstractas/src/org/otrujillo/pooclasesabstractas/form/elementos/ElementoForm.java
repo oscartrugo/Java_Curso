@@ -1,5 +1,6 @@
 package org.otrujillo.pooclasesabstractas.form.elementos;
 
+import org.otrujillo.pooclasesabstractas.form.validador.LargoValidador;
 import org.otrujillo.pooclasesabstractas.form.validador.Validador;
 
 import java.util.ArrayList;
@@ -37,16 +38,16 @@ abstract public class ElementoForm {
     }
 
     public boolean esValido(){
-        for(Validador validador: validadores){
-            if(!validador.esValido(this.valor)){
-                this.errores.add(validador.getMensaje());
+        for(Validador v: validadores){
+            if(!v.esValido(this.valor)){
+                if(v instanceof LargoValidador){
+                    this.errores.add(((LargoValidador) v).getMensajeFormateado(nombre));
+                }else{
+                    this.errores.add(String.format(v.getMensaje(), nombre));
+                }
             }
         }
         return this.errores.isEmpty();
-    }
-
-    public String getNombre() {
-        return nombre;
     }
 
     abstract public String dibujarHtml();

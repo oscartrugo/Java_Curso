@@ -2,7 +2,7 @@ package org.otrujillo.pooclasesabstractas.form.validador;
 
 public class LargoValidador extends Validador{
 
-    protected String mensaje = "El campo debe tener mínimo %d caracteres y máximo %d caracteres.";
+    protected String mensaje = "El campo %s debe tener mínimo %d caracteres y máximo %d caracteres.";
     private int minimo = 0;
     private int maximo = Integer.MAX_VALUE;
 
@@ -34,11 +34,15 @@ public class LargoValidador extends Validador{
 
     @Override
     public boolean esValido(String valor) {
-        this.mensaje = String.format(this.mensaje, this.minimo, this.maximo);
+        //this.mensaje = String.format(this.mensaje, this.minimo, this.maximo);
         if(valor == null){
             return true;
         }
         int largo = valor.length();
         return largo >= this.minimo && largo <= this.maximo;
+    }
+
+    public String getMensajeFormateado(String campo){
+        return String.format(this.mensaje, campo, this.minimo, this.maximo);
     }
 }

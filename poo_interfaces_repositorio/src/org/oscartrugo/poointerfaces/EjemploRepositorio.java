@@ -9,10 +9,10 @@ public class EjemploRepositorio {
     public static void main(String[] args) {
 
         CrudRepositorio repo = new ClienteListRepositorio();
-        repo.crear(new Cliente("Oscar", "Trujillo"));
-        repo.crear(new Cliente("Diana", "Colin"));
-        repo.crear(new Cliente("Ana", "Barbosa"));
-        repo.crear(new Cliente("Kirk", "Carrillo"));
+        repo.crear(new Cliente("Jano", "Perez"));
+        repo.crear(new Cliente("Bea", "Gonzalez"));
+        repo.crear(new Cliente("Luci", "Martinez"));
+        repo.crear(new Cliente("Andres", "Guzman"));
 
         List<Cliente> clientes = repo.listar();
         clientes.forEach(System.out::println);
@@ -22,7 +22,7 @@ public class EjemploRepositorio {
 
         System.out.println("======= ordenar =======");
         List<Cliente> clientesOrdenAsc = ((OrdenableRepositorio)repo).listar("apellido", Direccion.DESC);
-        for (Cliente cliente: clientes){
+        for (Cliente cliente: clientesOrdenAsc){
             System.out.println(cliente);
         }
 
@@ -32,8 +32,9 @@ public class EjemploRepositorio {
         repo.editar(beaActualizar);
         Cliente bea = repo.porId(2);
         System.out.println(bea);
+        System.out.println("=======================");
         ((OrdenableRepositorio)repo)
-                .listar("apellido", Direccion.DESC).forEach(System.out::println);
+                .listar("apellido", Direccion.ASC).forEach(System.out::println);
 
         System.out.println("======= eliminar =======");
         repo.eliminar(2);

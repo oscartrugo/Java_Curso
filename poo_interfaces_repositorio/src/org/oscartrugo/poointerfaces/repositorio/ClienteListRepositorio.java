@@ -25,7 +25,7 @@ public class ClienteListRepositorio implements CrudRepositorio,
         Cliente resultado = null;
 
         for (Cliente cliente: dataSource){
-            if (cliente.getId().equals(id)){
+            if (cliente.getId() != null && cliente.getId().equals(id)){
                 resultado = cliente;
                 break; //Salimos del for
             }

@@ -1,6 +1,7 @@
 package org.oscartrugo.generics;
 
 import org.oscartrugo.poointerfaces.modelo.Cliente;
+import org.oscartrugo.poointerfaces.modelo.ClientePremium;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,9 +29,20 @@ public class EjemploGenericos {
         List<String> nombres = fromArrayToList(new String[]{"Oscar", "Pepe", "Luci", "Bea", "John"},
                 enterosArreglo);
         nombres.forEach(System.out::println);
+
+        List<ClientePremium> clientesPremiumList = fromArrayToList(
+                new ClientePremium[]{new ClientePremium("Paco", "Fernandez")});
     }
 
-    public static <T> List<T> fromArrayToList(T[] clientes){ //Convierte arreglo a  lista
+    public static <T> List<T> fromArrayToList(T[] c){ //Convierte arreglo a  lista
+        return Arrays.asList(c);
+    }
+
+    public static <T extends Number> List<T> fromArrayToList(T[] c){ //Convierte arreglo a  lista
+        return Arrays.asList(c);
+    }
+
+    public static <T extends Cliente & Comparable<T>> List<T> fromArrayToList(T[] clientes){ //Convierte arreglo a  lista
         return Arrays.asList(clientes);
     }
 

@@ -1,9 +1,11 @@
 package org.oscartrugo.poointerfaces.repositorio;
 
+import org.oscartrugo.poointerfaces.modelo.BaseEntity;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableCrudRepositorio<T>  {
+public abstract class AbstractaListRepositorio<T extends BaseEntity> implements OrdenablePaginableCrudRepositorio<T>  {
 
     protected List<T> dataSource;
 
@@ -16,18 +18,18 @@ public abstract class AbstractaListRepositorio<T> implements OrdenablePaginableC
         return dataSource;
     }
 
-    /*@Override
-    public Cliente porId(Integer id) {
-        Cliente resultado = null;
+    @Override
+    public T porId(Integer id) {
+        T resultado = null;
 
-        for (Cliente cliente: dataSource){
+        for (T cliente: dataSource){
             if (cliente.getId() != null && cliente.getId().equals(id)){
                 resultado = cliente;
                 break; //Salimos del for
             }
         }
         return resultado;
-    }*/
+    }
 
     @Override
     public void crear(T t) {

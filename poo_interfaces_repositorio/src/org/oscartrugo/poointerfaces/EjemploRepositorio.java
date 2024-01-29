@@ -2,6 +2,7 @@ package org.oscartrugo.poointerfaces;
 
 import org.oscartrugo.poointerfaces.modelo.Cliente;
 import org.oscartrugo.poointerfaces.repositorio.*;
+import org.oscartrugo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
 

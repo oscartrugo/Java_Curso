@@ -1,11 +1,13 @@
-package org.oscartrugo.poointerfaces.repositorio;
+package org.oscartrugo.poointerfaces.repositorio.lista;
 
 import org.oscartrugo.poointerfaces.modelo.Cliente;
+import org.oscartrugo.poointerfaces.repositorio.AbstractaListRepositorio;
+import org.oscartrugo.poointerfaces.repositorio.Direccion;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente>  {
+public class ClienteListRepositorio extends AbstractaListRepositorio<Cliente> {
 
     @Override
     public void editar(Cliente cliente) {

@@ -4,13 +4,15 @@ import org.oscartrugo.poointerfaces.modelo.Cliente;
 import org.oscartrugo.poointerfaces.modelo.Producto;
 import org.oscartrugo.poointerfaces.repositorio.Direccion;
 import org.oscartrugo.poointerfaces.repositorio.OrdenablePaginableCrudRepositorio;
+import org.oscartrugo.poointerfaces.repositorio.excepciones.AccesoDatoException;
+import org.oscartrugo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 import org.oscartrugo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 import org.oscartrugo.poointerfaces.repositorio.lista.ProductoListRepositorio;
 
 import java.util.List;
 
 public class EjemploRepositorioProducto {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws AccesoDatoException {
 
         OrdenablePaginableCrudRepositorio<Producto> repo = new ProductoListRepositorio();
         repo.crear(new Producto("Mesa", 50.53));

@@ -3,13 +3,14 @@ package org.oscartrugo.poointerfaces.repositorio.lista;
 import org.oscartrugo.poointerfaces.modelo.Producto;
 import org.oscartrugo.poointerfaces.repositorio.AbstractaListRepositorio;
 import org.oscartrugo.poointerfaces.repositorio.Direccion;
+import org.oscartrugo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProductoListRepositorio extends AbstractaListRepositorio<Producto> {
     @Override
-    public void editar(Producto producto) {
+    public void editar(Producto producto) throws LecturaAccesoDatoException {
         Producto p = porId(producto.getId());
         p.setPrecio(producto.getPrecio());
         p.setDescripcion(producto.getDescripcion());

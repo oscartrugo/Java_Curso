@@ -5,6 +5,7 @@ import org.oscartrugo.poointerfaces.repositorio.*;
 import org.oscartrugo.poointerfaces.repositorio.excepciones.AccesoDatoException;
 import org.oscartrugo.poointerfaces.repositorio.excepciones.EscrituraAccesoDatoException;
 import org.oscartrugo.poointerfaces.repositorio.excepciones.LecturaAccesoDatoException;
+import org.oscartrugo.poointerfaces.repositorio.excepciones.RegistroDuplicadoAccesoDatoException;
 import org.oscartrugo.poointerfaces.repositorio.lista.ClienteListRepositorio;
 
 import java.util.List;
@@ -17,8 +18,11 @@ public class EjemploRepositorio {
             repo.crear(new Cliente("Jano", "Perez"));
             repo.crear(new Cliente("Bea", "Gonzalez"));
             repo.crear(new Cliente("Luci", "Martinez"));
-            repo.crear(new Cliente("Andres", "Guzman"));
-            repo.crear(null);
+            Cliente oscar = new Cliente("Oscar", "Trujillo");
+            repo.crear(oscar);
+            repo.crear(oscar);
+
+            //repo.crear(null);
 
             List<Cliente> clientes = repo.listar();
             clientes.forEach(System.out::println);
@@ -46,6 +50,9 @@ public class EjemploRepositorio {
             repo.listar().forEach(System.out::println);
             System.out.println("======= Total =======");
             System.out.println("Total registros: " + repo.total());
+        } catch (RegistroDuplicadoAccesoDatoException e) {
+            System.out.println("Registro Duplicado: " + e.getMessage());
+            e.printStackTrace();
         } catch (LecturaAccesoDatoException e) {
             System.out.println("Lectura: " + e.getMessage());
             e.printStackTrace();

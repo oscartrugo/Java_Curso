@@ -7,8 +7,8 @@ import java.util.*;
 public class EjemploHashSetUnicidad {
     public static void main(String[] args) {
 
-        //Set<Alumno> sa = new HashSet<>();
-        List<Alumno> sa = new LinkedList<>();
+        Set<Alumno> sa = new HashSet<>();
+        //List<Alumno> sa = new LinkedList<>();
         sa.add(new Alumno("Pato", 5));
         sa.add(new Alumno("Cata", 6));
         sa.add(new Alumno("Lucy", 4));
@@ -20,11 +20,11 @@ public class EjemploHashSetUnicidad {
         sa.add(new Alumno("Lucas", 3));
         System.out.println(sa);
 
-        System.out.println("Iterando utilizando un for clásico");
+        /*System.out.println("Iterando utilizando un for clásico");
         for(int i = 0; i < sa.size(); i++){
             Alumno a = sa.get(i);
             System.out.println(a.getNombre());
-        }
+        }*/
 
         System.out.println("Iterando utilizando un enhanced for");
         for(Alumno a : sa){

@@ -1,4 +1,4 @@
-package org.oscartrugo.ejemplos.set;
+package org.oscartrugo.ejemplos.list;
 
 import org.oscartrugo.ejemplos.modelo.Alumno;
 

@@ -3,6 +3,7 @@ package org.oscartrugo.ejemplos.set;
 import org.oscartrugo.ejemplos.modelo.Alumno;
 
 import java.util.LinkedList;
+import java.util.ListIterator;
 
 public class EjemploLinkedList {
     public static void main(String[] args) {
@@ -46,5 +47,17 @@ public class EjemploLinkedList {
 
         enlazada.set(3, new Alumno("Lalo", 7));
         System.out.println(enlazada + ", size = " + enlazada.size());
+
+        ListIterator<Alumno> li = enlazada.listIterator();
+
+        while(li.hasNext()){ //Imprime del primero al último
+            Alumno alumno = li.next();
+            System.out.println(alumno);
+        }
+        System.out.println("================ Previous");
+        while (li.hasPrevious()){ //Imprime del último al primero
+            Alumno alumno = li.previous();
+            System.out.println(alumno);
+        }
     }
 }

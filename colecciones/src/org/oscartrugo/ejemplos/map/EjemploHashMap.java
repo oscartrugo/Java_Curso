@@ -57,19 +57,37 @@ public class EjemploHashMap {
         for (Object valor : valores){
             System.out.println("valor = " + valor);
         }
-        System.out.println("=====================================================");
+        System.out.println("===================================================== keySet");
         Set<String> llaves = persona.keySet(); //Obtenemos un set con los valores de las llaves
         for (String llave : llaves){
             System.out.println("llave = " + llave);
         }
         System.out.println("===================================================== entrySet");
         for(Map.Entry<String, Object> par : persona.entrySet()){
-            System.out.println(par.getKey() + " => " + par.getValue());
+            Object valor = par.getValue();
+            if(valor instanceof Map){
+                String nom = (String) persona.get("nombre");
+                Map<String, String> direccionMap = (Map<String, String>) valor;
+                for (Map.Entry<String, String> parDir: direccionMap.entrySet()){
+                    System.out.println(parDir.getKey() + " => " + parDir.getValue());
+                }
+            }else{
+                System.out.println(par.getKey() + " => " + par.getValue());
+            }
         }
         System.out.println("===================================================== keySet");
         for (String llave : persona.keySet()){
             Object valor = persona.get(llave);
-            System.out.println(llave + " => " + valor);
+            if(valor instanceof Map){
+                String nom = (String) persona.get("nombre");
+                Map<String, String> direccionMap = (Map<String, String>) valor;
+                System.out.println("El país de " + nom + ": " + direccionMap.get("pais"));
+                System.out.println("El estado de " + nom + ": " + direccionMap.get("estado"));
+                System.out.println("La ciudad de " + nom + ": " + direccionMap.get("ciudad"));
+            }else{
+                System.out.println(llave + " => " + valor);
+            }
+
         }
         System.out.println("===================================================== forEach");
         persona.forEach((llave, valor) -> {

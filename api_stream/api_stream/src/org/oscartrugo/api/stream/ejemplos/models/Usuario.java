@@ -3,10 +3,13 @@ package org.oscartrugo.api.stream.ejemplos.models;
 public class Usuario {
     private String nombre;
     private String apellido;
+    private Integer id;
+    private static int ultimoId;
 
     public Usuario(String nombre, String apellido) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.id = ++ultimoId;
     }
 
     public String getNombre() {
@@ -23,6 +26,14 @@ public class Usuario {
 
     public void setApellido(String apellido) {
         this.apellido = apellido;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     @Override

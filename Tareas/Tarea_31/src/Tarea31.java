@@ -1,6 +1,4 @@
 import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Stream;
 
 public class Tarea31 {
     public static void main(String[] args) {
@@ -13,20 +11,11 @@ public class Tarea31 {
             numbers[i] = i + 1;
         }
 
-        Stream<Integer> numbersStream = Arrays
-                .stream(numbers)
-                .boxed();
-        List<Integer> dividedBy10 = numbersStream
-                .filter(n -> n % 10 != 0)
-                .toList();
-        Stream<Double> mappedToDouble = dividedBy10.stream()
-                .mapToDouble(Integer::doubleValue)
-                .boxed();
-        List<Double> dividedDoubleBy2 = mappedToDouble
-                .map(n -> n/2)
-                .toList();
-        Double sum = dividedDoubleBy2.stream()
-                .reduce(0.0, Double::sum);
+        double sum = Arrays
+                .stream(numbers) //Utilizando el API stream
+                .filter(n -> n % 10 != 0) //Eliminar los divisibles entre 10
+                .mapToDouble(n -> (double) n / 2) //Convertir los elementos a double y dividirlos entre 2
+                .reduce(0.0, Double::sum);//Devolver la suma con el operador reduce
         System.out.println(sum);
     }
 }
